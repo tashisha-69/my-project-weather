@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>My weather app</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/4b0d82863d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="colONE">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <p class="card-text">
+                                <h1 id="number-temp"> </h1><i class="far fa-sun"></i> °C
+                                <br>
+                                <h2></h2> m/s wind
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="colTWO">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Always look on the bright side of life!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="colTHREE">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+
+                                <h6 class="card-text"></h6>
+                                <h7>
+
+
+
+
+                                </h7>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navbar navbar-light bg-light">
+                    <div class="container-fluid">
+                        <form class="d-flex" id="search-engine">
+                            <input class="form-control me-2" id="search-input" type="search"
+                                placeholder="Enter city here..." aria-label="Search" />
+                            <button class="btn btn-outline-success" type="submit" id="search-button">
+                                Search
+                            </button>
+
+                            <button type="button" class="btn btn-outline-info" id="current-button">Current</button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+            <div class="futureTIME"></div>
+            <div class="row row-cols-1 row-cols-md-5 g-4">
+                <div class="colFOUR">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Tomorrow</h5>
+                            <p class="card-text">
+                                25° <i class="far fa-sun"></i> <br />
+                                12m/h wind
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="colFIVE">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Next day</h5>
+                            <p class="card-text">
+                                35° <i class="far fa-sun"></i> <br />15m/h wind
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="colSIX">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Next day</h5>
+                            <p class="card-text">
+                                6° <i class="fas fa-cloud"></i><br />
+                                18m/h wind
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="colSEVEN">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Next day</h5>
+                            <p class="card-text">
+                                5° <i class="fas fa-cloud"></i> <br />2m/h wind
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="colEIGHT">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Next day</h5>
+                            <p class="card-text">
+                                2° <i class="fas fa-cloud"></i><br />0 m/h wind
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
