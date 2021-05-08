@@ -1,5 +1,6 @@
-h1 {
-  display: inline;
+.mainInfo {
+  list-style: none;
+  font-size: x-large;
 }
 .card {
   background-image: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
@@ -7,17 +8,14 @@ h1 {
   font-family: "Jua", sans-serif;
 }
 
-.colONE {
-  font-size: 35px;
+.col {
+  font-size: 20px;
 }
 
 .far fa-sun {
   font-size: x-large;
 }
 
-.card-footer {
-  font-size: x-small;
-}
 .d-flex {
   padding-left: 285px;
 }
