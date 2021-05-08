@@ -36,10 +36,22 @@ form.addEventListener( "submit" , getCity);
 
 function getTemp(response) {
     
+    
     let temperature = Math.round(response.data.main.temp);
     let wind = Math.round(response.data.wind.speed);
     let town = response.data.name
     let country = response.data.sys.country
+    let description = response.data.weather[0].description
+    let humidity = response.data.main.humidity
+    let weatherPic = response.data.weather[0].icon
+
+  
+
+    let icon = document.querySelector("#icon");
+    icon.innerHTML= weatherPic
+
+    icon.setAttribute("src" , `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+
     
     let h5 = document.querySelector("h5");
     h5.innerHTML = town
@@ -52,7 +64,12 @@ function getTemp(response) {
     
     let h6 = document.querySelector("h6");
     h6.innerHTML = country
-    
+
+    let span = document.querySelector("#description");
+    span.innerHTML = description
+
+    let h4 = document.querySelector("h4");
+    h4.innerHTML = humidity
 }
 
 
@@ -65,6 +82,8 @@ function showTemp(response) {
     let wind = Math.round(response.data.wind.speed);
     let city = response.data.name
     let country = response.data.sys.country
+    let description = response.data.weather[0].description
+    let humidity = response.data.main.humidity
 
     let h1 = document.querySelector("h1");
     h1.innerHTML = temperature
@@ -77,6 +96,12 @@ function showTemp(response) {
 
     let h6 = document.querySelector("h6");
     h6.innerHTML = country
+
+      let span = document.querySelector("#description");
+    span.innerHTML = description
+
+    let h4 = document.querySelector("h4");
+    h4.innerHTML = humidity
     
 }
 
@@ -95,3 +120,4 @@ function currentLocation (position) {
 
 let button = document.querySelector("#current-button");
 button.addEventListener("click" , currentLocation);
+
