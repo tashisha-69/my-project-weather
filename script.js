@@ -84,6 +84,14 @@ function showTemp(response) {
     let country = response.data.sys.country
     let description = response.data.weather[0].description
     let humidity = response.data.main.humidity
+    let weatherPic = response.data.weather[0].icon
+
+  
+
+    let icon = document.querySelector("#icon");
+    icon.innerHTML= weatherPic
+
+    icon.setAttribute("src" , `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
 
     let h1 = document.querySelector("h1");
     h1.innerHTML = temperature
