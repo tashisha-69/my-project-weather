@@ -5,7 +5,13 @@ let h6 = document.querySelector("h7");
 let date = now.getDate();
 
 let hours = now.getHours();
+if (hours < 10) {
+    hours = `0${hours}`;
+  }
 let minutes = now.getMinutes();
+if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
 let days = ["Sunday" , "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday" , "Saturday"];
 let day = days[now.getDay()];
@@ -13,25 +19,30 @@ let day = days[now.getDay()];
 h6.innerHTML = `${day} ${hours}:${minutes}`;
 
 
+function search(city) {
+    let apiKEY = "1bac14ffc7b0daec09f7ccca1d8eaa84";
+    
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
+    axios.get(`${apiURL}&appid=${apiKEY}`).then(getTemp);
+}
+
+
+
 function getCity(event) {
     event.preventDefault();
     
-    let apiKEY = "1bac14ffc7b0daec09f7ccca1d8eaa84";
-        
+    
     let city = document.querySelector("#search-input");
     
-    let h5 = document.querySelector("h5");
-    h5.innerHTML = `${city.value}`;
+        search(city.value);
     
-    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&units=metric`;
-    
-    
-    axios.get(`${apiURL}&appid=${apiKEY}`).then(getTemp);
 }
+
 
 let form = document.querySelector("#search-engine");
 form.addEventListener( "submit" , getCity);
 
+search("London");
 
 
 function getTemp(response) {
@@ -45,17 +56,17 @@ function getTemp(response) {
     let humidity = response.data.main.humidity
     let weatherPic = response.data.weather[0].icon
 
-  
-
+    
+    
     let icon = document.querySelector("#icon");
     icon.innerHTML= weatherPic
-
+    
     icon.setAttribute("src" , `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
-
+    
     
     let h5 = document.querySelector("h5");
     h5.innerHTML = town
-
+    
     let h1 = document.querySelector("h1");
     h1.innerHTML = temperature
     
@@ -64,10 +75,10 @@ function getTemp(response) {
     
     let h6 = document.querySelector("h6");
     h6.innerHTML = country
-
+    
     let span = document.querySelector("#description");
     span.innerHTML = description
-
+    
     let h4 = document.querySelector("h4");
     h4.innerHTML = humidity
 }
@@ -85,29 +96,29 @@ function showTemp(response) {
     let description = response.data.weather[0].description
     let humidity = response.data.main.humidity
     let weatherPic = response.data.weather[0].icon
-
+    
   
-
+    
     let icon = document.querySelector("#icon");
     icon.innerHTML= weatherPic
-
+    
     icon.setAttribute("src" , `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
-
+    
     let h1 = document.querySelector("h1");
     h1.innerHTML = temperature
-
+    
     let h2 = document.querySelector("h2");
     h2.innerHTML = wind
 
     let h5 = document.querySelector("h5");
     h5.innerHTML = city
-
+    
     let h6 = document.querySelector("h6");
     h6.innerHTML = country
-
-      let span = document.querySelector("#description");
+    
+    let span = document.querySelector("#description");
     span.innerHTML = description
-
+    
     let h4 = document.querySelector("h4");
     h4.innerHTML = humidity
     
@@ -128,4 +139,5 @@ function currentLocation (position) {
 
 let button = document.querySelector("#current-button");
 button.addEventListener("click" , currentLocation);
+
 
