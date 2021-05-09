@@ -48,7 +48,7 @@ search("London");
 function getTemp(response) {
     
     
-    let temperature = Math.round(response.data.main.temp);
+    celciusTemperature = response.data.main.temp
     let wind = Math.round(response.data.wind.speed);
     let town = response.data.name
     let country = response.data.sys.country
@@ -68,7 +68,7 @@ function getTemp(response) {
     h5.innerHTML = town
     
     let h1 = document.querySelector("h1");
-    h1.innerHTML = temperature
+    h1.innerHTML = Math.round(celciusTemperature);
     
     let h2 = document.querySelector("h2");
     h2.innerHTML = wind
@@ -137,7 +137,27 @@ function currentLocation (position) {
     axios.get(apiUrl).then(showTemp);
 }
 
+function displayFahrenheitTemp (event) {
+    event.preventDefault();
+    
+    let temperature = document.querySelector("#number-temp");
+    let fahrenheitTemp = (celciusTemperature * 9/5) + 32;
+    temperature.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function displayCelciusTemp (event) {
+    event.preventDefault();
+    let temperature = document.querySelector("#number-temp");
+    temperature.innerHTML = Math.round(celciusTemperature);
+}
+
+let celciusTemperature = null;
+
 let button = document.querySelector("#current-button");
 button.addEventListener("click" , currentLocation);
 
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click" , displayFahrenheitTemp);
 
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", displayCelciusTemp);
