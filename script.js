@@ -48,7 +48,7 @@ search("London");
 function getTemp(response) {
     
     
-    celciusTemperature = response.data.main.temp
+    celsiusTemperature = response.data.main.temp
     let wind = Math.round(response.data.wind.speed);
     let town = response.data.name
     let country = response.data.sys.country
@@ -68,7 +68,7 @@ function getTemp(response) {
     h5.innerHTML = town
     
     let h1 = document.querySelector("h1");
-    h1.innerHTML = Math.round(celciusTemperature);
+    h1.innerHTML = Math.round(celsiusTemperature);
     
     let h2 = document.querySelector("h2");
     h2.innerHTML = wind
@@ -141,17 +141,17 @@ function displayFahrenheitTemp (event) {
     event.preventDefault();
     
     let temperature = document.querySelector("#number-temp");
-    let fahrenheitTemp = (celciusTemperature * 9/5) + 32;
+    let fahrenheitTemp = (celsiusTemperature * 9/5) + 32;
     temperature.innerHTML = Math.round(fahrenheitTemp);
 }
 
-function displayCelciusTemp (event) {
+function displayCelsiusTemp (event) {
     event.preventDefault();
     let temperature = document.querySelector("#number-temp");
-    temperature.innerHTML = Math.round(celciusTemperature);
+    temperature.innerHTML = Math.round(celsiusTemperature);
 }
 
-let celciusTemperature = null;
+let celsiusTemperature = null;
 
 let button = document.querySelector("#current-button");
 button.addEventListener("click" , currentLocation);
@@ -159,5 +159,5 @@ button.addEventListener("click" , currentLocation);
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click" , displayFahrenheitTemp);
 
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", displayCelciusTemp);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
