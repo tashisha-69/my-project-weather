@@ -84,15 +84,13 @@ function getTemp(response) {
 }
 
 function displayForecast() {
-    let forecastElement = document.querySelector ("#forecast");
+    let forecastElement = document.querySelector("forecast");
 
 let forecastHTML = "";
 forecastHTML =
 forecastHTML +
 
     `
-
-
     <div class="row">
                     <div class="col-2  border border-5 m-2 p-3 rounded-circle">
                         <div class="weather-forecast-day">
