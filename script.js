@@ -86,7 +86,30 @@ function getTemp(response) {
 function displayForecast() {
     let forecastElement = document.querySelector ("#forecast");
 
-    forecastElement.innerHTML="Forecast";
+    forecastElement.innerHTML=`
+
+    <div class="row">
+                    <div class="col-2  border border-5 m-2 p-3 rounded-circle">
+                        <div class="weather-forecast-day">
+                           <strong>
+                               Sunday
+                           </strong> 
+                        </div>
+                        <div class="weather-forecast-temp">
+                            25° <img src="" alt="" id="icon">
+                            <br>
+                            <span id="description">
+                                blabla
+
+                            </span>
+                        </div>
+                        
+                        
+
+                    </div>
+
+                </div>
+                `;
 }
 
 
