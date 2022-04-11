@@ -182,7 +182,7 @@ function displayCelsiusTemp (event) {
     temperature.innerHTML = Math.round(celsiusTemperature);
 }
 
-displayForecast();
+
 
 let celsiusTemperature = null;
 
@@ -194,3 +194,4 @@ fahrenheitLink.addEventListener("click" , displayFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
+displayForecast();
