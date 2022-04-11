@@ -83,7 +83,11 @@ function getTemp(response) {
     h4.innerHTML = humidity
 }
 
+function displayForecast() {
+    let forecastElement = document.querySelector ("#forecast");
 
+    forecastElement.innerHTML="forecast";
+}
 
 
 function showTemp(response) {
