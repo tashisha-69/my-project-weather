@@ -145,6 +145,11 @@ function displayFahrenheitTemp (event) {
     temperature.innerHTML = Math.round(fahrenheitTemp);
 }
 
+function displayCelsiusTemp (event) {
+    event.preventDefault();
+    let temperature = document.querySelector("#number-temp");
+    temperature.innerHTML = Math.round(celsiusTemperature);
+}
 
 let celsiusTemperature = null;
 
