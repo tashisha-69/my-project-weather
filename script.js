@@ -182,6 +182,8 @@ function displayCelsiusTemp (event) {
     temperature.innerHTML = Math.round(celsiusTemperature);
 }
 
+displayForecast();
+
 let celsiusTemperature = null;
 
 let button = document.querySelector("#current-button");
