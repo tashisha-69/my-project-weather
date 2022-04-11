@@ -19,3 +19,8 @@
 .d-flex {
   padding-left: 285px;
 }
+
+.weatherForecast {
+  margin-top: 20px;
+  text-align: center;
+}
