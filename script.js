@@ -86,9 +86,8 @@ function getTemp(response) {
 function displayForecast() {
     let forecastElement = document.querySelector("#forecast");
 
-let forecastHTML = "";
-forecastHTML =
-forecastHTML +
+let forecastHTML = "hello";
+forecastHTML = forecastHTML +
 
     `
     <div class="row">
