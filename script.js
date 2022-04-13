@@ -87,6 +87,8 @@ function displayForecast() {
     let forecastElement = document.querySelector("#forecast");
 
 let forecastHTML = `<div class="row">`;
+let days = ["Wednesday", "Thursday", "Friday", "Saturday"];
+days.forEach(function(days) {
 forecastHTML = forecastHTML +
 
     `
@@ -94,7 +96,7 @@ forecastHTML = forecastHTML +
                     <div class="col-2  border border-5 m-2 p-3 rounded-circle">
                         <div class="weather-forecast-day">
                            <strong>
-                               Sunday
+                               ${days}
                            </strong> 
                         </div>
                         <div class="weather-forecast-temp">
@@ -112,6 +114,9 @@ forecastHTML = forecastHTML +
 
                 </div>
                 `;
+}
+)
+
                 forecastHTML= forecastHTML + `</div>`;
                 forecastElement.innerHTML=forecastHTML;
                 
