@@ -93,7 +93,7 @@ forecastHTML = forecastHTML +
 
     `
     
-                    <div class="col-2  border border-5 m-4 p-3 rounded-circle">
+                    <div class="col-2  border border-5 m-3 p-3 rounded-circle">
                         <div class="weather-forecast-day">
                            <strong>
                                ${days}
