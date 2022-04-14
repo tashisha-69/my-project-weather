@@ -82,11 +82,11 @@ function getTemp(response) {
     let h4 = document.querySelector("h4");
     h4.innerHTML = humidity
 
-    getForecast(response.data.coords)
+    getForecast(response.data.coords);
 }
 
 function getForecast (coordinates) {
-    console.log(coordinates);
+    
 
     let apiKey = "1bac14ffc7b0daec09f7ccca1d8eaa84";
     let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`
