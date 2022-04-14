@@ -82,7 +82,7 @@ function getTemp(response) {
     let h4 = document.querySelector("h4");
     h4.innerHTML = humidity
 
-    console.log(response.data);
+    getForecast(response.data.coords)
 }
 
 function getForecast (coordinates) {
@@ -91,6 +91,7 @@ function getForecast (coordinates) {
     let apiKey = "1bac14ffc7b0daec09f7ccca1d8eaa84";
     let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`
 
+    axios.get(apiURL).then(displayForecast);
     
 }
 
@@ -212,4 +213,3 @@ fahrenheitLink.addEventListener("click" , displayFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
-displayForecast();
