@@ -89,7 +89,7 @@ function getTemp(response) {
     let h4 = document.querySelector("h4");
     h4.innerHTML = humidity
 
-    getForecast(response.data.coord);
+    getForecast(coordinates);
 }
 
 function getForecast (coordinates) {
