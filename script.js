@@ -23,10 +23,17 @@ function search(city) {
     let apiKEY = "1bac14ffc7b0daec09f7ccca1d8eaa84";
     
     let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
-    axios.get(`${apiURL}&appid=${apiKEY}`).then(getTemp);
+    axios.get(`${apiURL}&appid=${apiKEY}`).then(coordinatesCity);
 }
 
+function coordinatesCity (city) {
+let apiKEY = "1bac14ffc7b0daec09f7ccca1d8eaa84";
 
+let apiURL =`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKEY}`;
+
+axios.get(search).then(getTemp);
+
+}
 
 function getCity(event) {
     event.preventDefault();
@@ -82,7 +89,7 @@ function getTemp(response) {
     let h4 = document.querySelector("h4");
     h4.innerHTML = humidity
 
-    getForecast(response.data.coordinates);
+    getForecast(response.data.coord);
 }
 
 function getForecast (coordinates) {
