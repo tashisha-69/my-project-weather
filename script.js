@@ -22,11 +22,18 @@ h6.innerHTML = `${day} ${hours}:${minutes}`;
 function search(city) {
     let apiKEY = "1bac14ffc7b0daec09f7ccca1d8eaa84";
     
-    let apiURL = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKEY}`;
-    axios.get(`${apiURL}&appid=${apiKEY}`).then(getTemp);
-    
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
+    axios.get(`${apiURL}&appid=${apiKEY}`).then(coordinatesCity);
 }
 
+function coordinatesCity (city) {
+let apiKEY = "1bac14ffc7b0daec09f7ccca1d8eaa84";
+
+let apiURL =`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKEY}`;
+
+axios.get(search).then(getTemp);
+
+}
 
 function getCity(event) {
     event.preventDefault();
@@ -103,6 +110,7 @@ let forecastHTML = `<div class="row">`;
 let days = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 days.forEach(function(days) {
 forecastHTML = forecastHTML +
+
     `
     
                     <div class="col-2  border border-5 m-3 p-3 rounded-circle">
