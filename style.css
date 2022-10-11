@@ -2,10 +2,8 @@
   list-style: none;
   font-size: x-large;
 }
-.card {
-  background-image:weather.jpg ;
-
-  font-family: "Jua", sans-serif;
+body {
+  background-image: url("weather.jpg");
 }
 
 .col {
