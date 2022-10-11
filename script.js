@@ -208,6 +208,7 @@ function displayCelsiusTemp (event) {
 }
 
 
+
 let celsiusTemperature = null;
 
 let button = document.querySelector("#current-button");
