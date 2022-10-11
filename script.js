@@ -201,11 +201,6 @@ function displayFahrenheitTemp (event) {
     let fahrenheitTemp = (celsiusTemperature * 9/5) + 32;
     temperature.innerHTML = Math.round(fahrenheitTemp);
 }
-function displayCelsiusTemp (event) {
-    event.preventDefault();
-    let temperature = document.querySelector("#number-temp");
-    temperature.innerHTML = Math.round(celsiusTemperature);
-}
 
 
 
