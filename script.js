@@ -207,8 +207,11 @@ function displayCelsiusTemp (event) {
     let temperature = document.querySelector("#number-temp");
     temperature.innerHTML = Math.round(celsiusTemperature);
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> parent of ea7c6b9 (quick check up)
 
 let celsiusTemperature = null;
 
