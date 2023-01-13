@@ -1,8 +1,3 @@
-let city = "Pula";
-city = city.replace("name", "coordinates");
-console.log(city);
-
-
 let now = new Date();
 
 let h6 = document.querySelector("h7");
